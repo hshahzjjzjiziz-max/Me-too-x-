@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>3D Игра</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="score">0</div>
+    <div id="rotate-overlay">
+        <div id="rotate-icon">📱</div>
+        <div>Поверни телефон горизонтально</div>
+    </div>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+    }
+    </script>
+    <script type="module" src="game.js"></script>
+</body>
+</html>

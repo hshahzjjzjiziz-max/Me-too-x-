@@ -1,0 +1,56 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    overscroll-behavior: none;
+}
+
+canvas {
+    display: block;
+    touch-action: none;
+}
+
+#score {
+    display: none; /* счётчик ключей рисуется отдельным блоком из game.js, этот дублирующий скрыт */
+}
+
+/* Оверлей "поверни телефон" — честная замена CSS-хаку с rotate(90deg).
+   Не трогает координаты тачей, просто перекрывает игру, пока телефон в портретной ориентации. */
+#rotate-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #111;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    text-align: center;
+    gap: 16px;
+}
+
+#rotate-icon {
+    font-size: 48px;
+    animation: rotateHint 1.5s ease-in-out infinite;
+}
+
+@keyframes rotateHint {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(90deg); }
+}
+
+@media (orientation: portrait) {
+    #rotate-overlay {
+        display: flex;
+    }
+}
